@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 16, 2018 10:19:13 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.waramun.StadiumDetail" table="stadium" catalog="waramundb">
+        <id name="stadiumId" type="java.lang.Integer">
+            <column name="STADIUM_ID" />
+            <generator class="foreign">
+				<param name="property">eplClub</param>
+			</generator>
+        </id>
+        <one-to-one name="eplClub" class="com.waramun.EplClub" constrained="true"></one-to-one>
+        <property name="capacity" type="java.lang.Integer">
+            <column name="CAPACITY" />
+        </property>
+        <property name="stadiumName" type="java.lang.String">
+            <column name="STADIUM_NAME" />
+        </property>
+    </class>
+</hibernate-mapping>
